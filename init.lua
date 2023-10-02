@@ -530,3 +530,8 @@ vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 --Relative line numbering
 vim.wo.relativenumber = true
 
+-- Set the tabstop, shiftwidth, and expandtab options
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
