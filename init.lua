@@ -154,11 +154,12 @@ require('lazy').setup({
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
+    main = "ibl",
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
         debounce = 300,
-        indent = { char = |",
+        indent = { char = "|",
           smart_indent_cap = true },
         whitespace = {
           remove_blankline_trail = true,
@@ -385,7 +386,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
-  -- NOTE: Remember that lua is a real programming language, and as such it is possible
+  -- NOTE: Remember that lua is a real programming language, and as such it is possibleine
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
   --
@@ -538,4 +539,7 @@ vim.wo.relativenumber = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+
+-- Remap :Rexplore to CTRL-E in normal mode
+vim.api.nvim_set_keymap('n', '<C-E>', ':Rexplore<CR>', {noremap = true, silent = true})
 
