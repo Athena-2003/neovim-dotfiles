@@ -128,14 +128,14 @@ require('lazy').setup({
     },
   },
 
---  {
-    -- Theme inspired by Atom
-  --  'navarasu/onedark.nvim',
-  --  priority = 1000,
-  --  config = function()
-  --    vim.cmd.colorscheme 'onedark'
-  --  end,
-  -- },
+ -- {
+ --    Theme inspired by Atom
+ --   'navarasu/onedark.nvim',
+ --   priority = 1000,
+ --   config = function()
+ --     vim.cmd.colorscheme 'onedark'
+ --   end,
+ --  },
 
   {
     -- Set lualine as statusline
@@ -539,6 +539,9 @@ vim.wo.relativenumber = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+
+-- set the cursor to block in insert mode
+vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-E>', ':Rexplore<CR>', {noremap = true, silent = true})
