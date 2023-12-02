@@ -541,8 +541,20 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- set the cursor to block in insert mode
-vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
+-- vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-E>', ':Rexplore<CR>', {noremap = true, silent = true})
 
+-- add remap of hitting jj to esc into normal mode
+-- vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
+-- vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
+
+-- Define augroup equivalent in Lua
+-- vim.cmd[[
+-- augroup RestoreCursorShapeOnExit
+--     autocmd!
+--     autocmd VimLeave * set guicursor=a:ver25-Cursor
+-- augroup END
+-- ]]
+--
