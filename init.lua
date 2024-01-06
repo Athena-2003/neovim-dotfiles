@@ -607,7 +607,3 @@ vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
 -- move lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
-
---set the colorscheme
-vim.cmd[[colorscheme solarized-osaka]]
