@@ -145,8 +145,8 @@ require('lazy').setup({
 		-- See `:help lualine.txt`
 		opts = {
 			options = {
-				icons_enabled = false,
-				theme = 'onedark',
+				icons_enabled = true,
+				theme = 'horizon',
 				component_separators = '|',
 				section_separators = '',
 			},
