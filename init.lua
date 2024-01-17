@@ -1,4 +1,4 @@
---[[
+--[[ini
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
@@ -162,9 +162,9 @@ require('lazy').setup({
 		opts = {
 			debounce = 300,
 			indent = { char = "|",
-				smart_indent_cap = true },
+			smart_indent_cap = true },
 			whitespace = {
-				remove_blankline_trail = true,
+			remove_blankline_trail = true,
 			},
 		},
 	},
@@ -320,10 +320,10 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'prisma', 'graphql' ,'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-	auto_install = false,
+	auto_install = true,
 
 	highlight = { enable = true },
 	indent = { enable = true },
@@ -534,8 +534,8 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 --Transparent background (not available without compositor)
-vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 
 --Relative line numbering
 vim.wo.relativenumber = true
@@ -553,7 +553,7 @@ vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', {noremap = true, silent =
 
 -- add remap of hitting jj to esc into normal mode
 -- vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
--- vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 
 -- Define augroup equivalent in Lua
 -- vim.cmd[[
@@ -607,3 +607,8 @@ vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
 -- move lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+
+-- black background
+-- vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
