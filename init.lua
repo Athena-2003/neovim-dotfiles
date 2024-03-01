@@ -555,15 +555,6 @@ vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', {noremap = true, silent =
 -- vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 
--- Define augroup equivalent in Lua
--- vim.cmd[[
--- augroup RestoreCursorShapeOnExit
---     autocmd!
---     autocmd VimLeave * set guicursor=a:ver25-Cursor
--- augroup END
--- ]]
-
-
 local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
