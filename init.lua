@@ -844,3 +844,6 @@ vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 vim.cmd [[highlight SignColumn guibg=NONE]]
+
+-- set the cursor to block in insert mode
+vim.cmd [[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]]
