@@ -218,6 +218,10 @@ require('lazy').setup({
 		},
 	},
 
+	{ 'nvim-telescope/telescope-ui-select.nvim' },
+
+	{ 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
 	{
 		-- Highlight, edit, and navigate code
 		'nvim-treesitter/nvim-treesitter',
@@ -628,3 +632,5 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- black background
 -- vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
+
+-- vim.cmd("colorscheme gruvbox")
