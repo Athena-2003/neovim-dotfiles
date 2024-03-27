@@ -22,41 +22,41 @@
 
 
 
-
--- ThePrimeagen colorscheme rose pine setup
-function ColorMyPencils(color)
-    color = color or "rose-pine"
-    vim.cmd.colorscheme(color)
-end
-
-return {
-    {
-        "folke/tokyonight.nvim",
-        config = function()
-            require("tokyonight").setup({
-                style = "storm",
-                transparent = true,
-                terminal_colors = true,
-                styles = {
-                    comments = { italic = false },
-                    keywords = { italic = false },
-                    sidebars = "dark",
-                    floats = "dark",
-                },
-            })
-        end,
-    },
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require("rose-pine").setup({ disable_background = true })
-
-            vim.cmd("colorscheme rose-pine")
-            ColorMyPencils()
-        end,
-    },
-}
+--
+-- -- ThePrimeagen colorscheme rose pine setup
+-- function ColorMyPencils(color)
+--     color = color or "rose-pine"
+--     vim.cmd.colorscheme(color)
+-- end
+--
+-- return {
+--     {
+--         "folke/tokyonight.nvim",
+--         config = function()
+--             require("tokyonight").setup({
+--                 style = "storm",
+--                 transparent = true,
+--                 terminal_colors = true,
+--                 styles = {
+--                     comments = { italic = false },
+--                     keywords = { italic = false },
+--                     sidebars = "dark",
+--                     floats = "dark",
+--                 },
+--             })
+--         end,
+--     },
+--     {
+--         "rose-pine/neovim",
+--         name = "rose-pine",
+--         config = function()
+--             require("rose-pine").setup({ disable_background = true })
+--
+--             vim.cmd("colorscheme rose-pine")
+--             ColorMyPencils()
+--         end,
+--     },
+-- }
 
 
 
@@ -443,33 +443,33 @@ return {
 --   -- },
 -- }
 
--- return {
---     "ellisonleao/gruvbox.nvim",
---     priority = 1000 ,
---     config = true,
---     opts = {
---         terminal_colors = true,
---         undercurl = true,
---         underline = true,
---         bold = true,
---         italic = {
---             strings = true,
---             emphasis = true,
---             comments = true,
---             operators = false,
---             folds = true,
---         },
---         strikethrough = true,
---         invert_selection = false,
---         invert_signs = false,
---         invert_tabline = false,
---         invert_intend_guides = false,
---         inverse = true, -- invert background for search, diffs, statuslines and errors
---         contrast = "hard", -- can be "hard", "soft" or empty string
---         palette_overrides = {},
---         overrides = {},
---         dim_inactive = false,
---         transparent_mode = true,
---     },
--- }
---
+return {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000 ,
+    config = true,
+    opts = {
+        terminal_colors = true,
+        undercurl = true,
+        underline = true,
+        bold = true,
+        italic = {
+            strings = true,
+            emphasis = true,
+            comments = true,
+            operators = false,
+            folds = true,
+        },
+        strikethrough = true,
+        invert_selection = false,
+        invert_signs = false,
+        invert_tabline = false,
+        invert_intend_guides = false,
+        inverse = true, -- invert background for search, diffs, statuslines and errors
+        contrast = "hard", -- can be "hard", "soft" or empty string
+        palette_overrides = {},
+        overrides = {},
+        dim_inactive = false,
+        transparent_mode = true,
+    },
+}
+
