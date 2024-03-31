@@ -1,62 +1,88 @@
 -- -- Devaslife guy's solarized osaka colorscheme setup
 -- return {
---   {
---     "craftzdog/solarized-osaka.nvim",
---     branch = "osaka",
---     lazy = true,
---     priority = 1000,
---     opts = function()
---       return {
---         transparent = true,
---       }
---     end,
---   },
--- }
---
-
-
-
-
-
-
-
-
-
---
--- -- ThePrimeagen colorscheme rose pine setup
--- function ColorMyPencils(color)
---     color = color or "rose-pine"
---     vim.cmd.colorscheme(color)
--- end
---
--- return {
 --     {
---         "folke/tokyonight.nvim",
---         config = function()
---             require("tokyonight").setup({
---                 style = "storm",
---                 transparent = true,
---                 terminal_colors = true,
---                 styles = {
---                     comments = { italic = false },
---                     keywords = { italic = false },
---                     sidebars = "dark",
---                     floats = "dark",
---                 },
---             })
---         end,
---     },
---     {
---         "rose-pine/neovim",
---         name = "rose-pine",
---         config = function()
---             require("rose-pine").setup({ disable_background = true })
+--         "craftzdog/solarized-osaka.nvim",
+--         branch = "osaka",
+--         lazy = true,
+--         priority = 1000,
+--         opts = {
+--             transparent = true, -- Enable this to disable setting the background color
+--             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+--             styles = {
+--                 -- Style to be applied to different syntax groups
+--                 -- Value is any valid attr-list value for `:help nvim_set_hl`
+--                 comments = { italic = true },
+--                 keywords = { italic = true },
+--                 functions = {},
+--                 variables = {},
+--                 -- Background styles. Can be "dark", "transparent" or "normal"
+--                 sidebars = "dark", -- style for sidebars, see below
+--                 floats = "dark", -- style for floating windows
+--             },
+--             sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+--             -- day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+--             hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+--             dim_inactive = false, -- dims inactive windows
+--             lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
 --
---             vim.cmd("colorscheme rose-pine")
---             ColorMyPencils()
---         end,
+--             --- You can override specific color groups to use other groups or a hex color
+--             --- function will be called with a ColorScheme table
+--             ---@param colors ColorScheme
+--             on_colors = function(colors) end,
+--
+--             --- You can override specific highlights to use other groups or a hex color
+--             --- function will be called with a Highlights and ColorScheme table
+--             ---@param highlights Highlights
+--             ---@param colors ColorScheme
+--             on_highlights = function(highlights, colors) end,
+--         },
 --     },
 -- }
+
+
+
+
+
+
+
+
+
+
+
+-- ThePrimeagen colorscheme rose pine setup
+function ColorMyPencils(color)
+    color = color or "rose-pine"
+    vim.cmd.colorscheme(color)
+end
+
+return {
+    {
+        "folke/tokyonight.nvim",
+        config = function()
+            require("tokyonight").setup({
+                style = "storm",
+                transparent = true,
+                terminal_colors = true,
+                styles = {
+                    comments = { italic = false },
+                    keywords = { italic = false },
+                    sidebars = "dark",
+                    floats = "dark",
+                },
+            })
+        end,
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            require("rose-pine").setup({ disable_background = true })
+
+            vim.cmd("colorscheme rose-pine")
+            ColorMyPencils()
+        end,
+    },
+}
 
 
 
@@ -443,33 +469,33 @@
 --   -- },
 -- }
 
-return {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000 ,
-    config = true,
-    opts = {
-        terminal_colors = true,
-        undercurl = true,
-        underline = true,
-        bold = true,
-        italic = {
-            strings = true,
-            emphasis = true,
-            comments = true,
-            operators = false,
-            folds = true,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = "hard", -- can be "hard", "soft" or empty string
-        palette_overrides = {},
-        overrides = {},
-        dim_inactive = false,
-        transparent_mode = true,
-    },
-}
-
+-- return {
+--     "ellisonleao/gruvbox.nvim",
+--     priority = 1000 ,
+--     config = true,
+--     opts = {
+--         terminal_colors = true,
+--         undercurl = true,
+--         underline = true,
+--         bold = true,
+--         italic = {
+--             strings = true,
+--             emphasis = true,
+--             comments = true,
+--             operators = false,
+--             folds = true,
+--         },
+--         strikethrough = true,
+--         invert_selection = false,
+--         invert_signs = false,
+--         invert_tabline = false,
+--         invert_intend_guides = false,
+--         inverse = true, -- invert background for search, diffs, statuslines and errors
+--         contrast = "hard", -- can be "hard", "soft" or empty string
+--         palette_overrides = {},
+--         overrides = {},
+--         dim_inactive = false,
+--         transparent_mode = true,
+--     },
+-- }
+--
