@@ -563,8 +563,8 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 --Transparent background (not available without compositor)
--- vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
+vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 
 --Relative line numbering
 vim.wo.relativenumber = true
@@ -634,3 +634,4 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 
 -- vim.cmd[[colorscheme solarized-osaka]]
+vim.cmd.colorscheme("gruvbuddy")
