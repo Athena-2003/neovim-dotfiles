@@ -575,7 +575,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- set the cursor to block in insert mode
--- vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
+vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', {noremap = true, silent = true})
@@ -634,4 +634,4 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 
 -- vim.cmd[[colorscheme solarized-osaka]]
-vim.cmd.colorscheme("gruvbuddy")
+-- vim.cmd.colorscheme("gruvbuddy")
