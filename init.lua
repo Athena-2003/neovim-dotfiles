@@ -291,7 +291,7 @@ vim.o.mouse = 'a'
 -- vim.o.clipboard = 'unnamedplus'
 
 -- remap to copy text to system clipboard
-vim.keymap.set('v', '<leader>y', '"+y', { desc = "[Y]ank to system clipboard" })
+vim.keymap.set('v', '<A-y>', '"+y', { desc = "[Y]ank to system clipboard" })
 
 -- remap to paste text from system clipboard
 vim.keymap.set('n', '<A-p>', '"+p', { desc = "[P]aste from the system clipboard" })
