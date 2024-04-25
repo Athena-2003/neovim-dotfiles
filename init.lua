@@ -288,7 +288,13 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
+
+-- remap to copy text to system clipboard
+vim.keymap.set('v', '<leader>y', '"+y', { desc = "[Y]ank to system clipboard" })
+
+-- remap to paste text from system clipboard
+vim.keymap.set('n', '<A-p>', '"+p', { desc = "[P]aste from the system clipboard" })
 
 -- Enable break indent
 vim.o.breakindent = true
