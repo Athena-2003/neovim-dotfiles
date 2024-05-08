@@ -49,47 +49,48 @@
 
 
 
--- ThePrimeagen colorscheme rose pine setup
-function ColorMyPencils(color)
-    color = color or "rose-pine"
-    vim.cmd.colorscheme(color)
-end
-
-return {
+-- -- ThePrimeagen colorscheme rose pine setup
+-- function ColorMyPencils(color)
+--     color = color or "rose-pine"
+--     vim.cmd.colorscheme(color)
+-- end
+--
+-- return {
+--     {
+--         "folke/tokyonight.nvim",
+--         config = function()
+--             require("tokyonight").setup({
+--                 style = "storm",
+--                 transparent = true,
+--                 terminal_colors = true,
+--                 styles = {
+--                     comments = { italic = false },
+--                     keywords = { italic = false },
+--                     sidebars = "dark",
+--                     floats = "dark",
+--                 },
+--             vim.cmd("colorscheme tokyonight")
+--             })
+--         end,
+--     },
     -- {
-    --     "folke/tokyonight.nvim",
+    --     "rose-pine/neovim",
+    --     name = "rose-pine",
     --     config = function()
-    --         require("tokyonight").setup({
-    --             style = "storm",
-    --             transparent = true,
-    --             terminal_colors = true,
+    --         require("rose-pine").setup({
+    --             disable_background = true,
     --             styles = {
-    --                 comments = { italic = false },
-    --                 keywords = { italic = false },
-    --                 sidebars = "dark",
-    --                 floats = "dark",
+    --                 bold = true,
+    --                 italic = false,
+    --                 transparency = false,
     --             },
     --         })
+    --
+    --         vim.cmd("colorscheme rose-pine")
+    --         ColorMyPencils()
     --     end,
     -- },
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require("rose-pine").setup({
-                disable_background = true,
-                styles = {
-                    bold = true,
-                    italic = false,
-                    transparency = false,
-                },
-            })
-
-            vim.cmd("colorscheme rose-pine")
-            ColorMyPencils()
-        end,
-    },
-}
+-- }
 
 
 
@@ -615,3 +616,28 @@ return {
 --         vim.cmd.colorscheme("monokai-pro")
 --     end
 -- }
+
+return {
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            style = "night",
+            transparent = true,
+            terminal_colors = true,
+            styles = {
+                -- Style to be applied to different syntax groups
+                -- Value is any valid attr-list value for `:help nvim_set_hl`
+                comments = { italic = true },
+                keywords = { bold = true,
+                    italic = false},
+                functions = {},
+                variables = {},
+                -- Background styles. Can be "dark", "transparent" or "normal"
+                sidebars = "transparent", -- style for sidebars, see below
+                floats = "transparent", -- style for floating windows
+            },
+        },
+    }
+}
