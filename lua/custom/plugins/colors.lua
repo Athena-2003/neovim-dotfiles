@@ -43,54 +43,59 @@
 
 
 
-
-
-
-
-
-
--- -- ThePrimeagen colorscheme rose pine setup
 -- function ColorMyPencils(color)
---     color = color or "rose-pine"
---     vim.cmd.colorscheme(color)
+-- 	color = color or "rose-pine"
+-- 	vim.cmd.colorscheme(color)
+--
+-- 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--
 -- end
 --
 -- return {
+--     -- {
+--     --     "folke/tokyonight.nvim",
+--     --     config = function()
+--     --         require("tokyonight").setup({
+--     --             -- your configuration comes here
+--     --             -- or leave it empty to use the default settings
+--     --             style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+--     --             transparent = true, -- Enable this to disable setting the background color
+--     --             terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+--     --             styles = {
+--     --                 -- Style to be applied to different syntax groups
+--     --                 -- Value is any valid attr-list value for `:help nvim_set_hl`
+--     --                 comments = { italic = false },
+--     --                 keywords = { italic = false },
+--     --                 -- Background styles. Can be "dark", "transparent" or "normal"
+--     --                 sidebars = "dark", -- style for sidebars, see below
+--     --                 floats = "dark", -- style for floating windows
+--     --             },
+--     --         })
+--     --     end
+--     -- },
+--
 --     {
---         "folke/tokyonight.nvim",
+--         "rose-pine/neovim",
+--         name = "rose-pine",
 --         config = function()
---             require("tokyonight").setup({
---                 style = "storm",
---                 transparent = true,
---                 terminal_colors = true,
+--             require('rose-pine').setup({
+--                 disable_background = true,
 --                 styles = {
---                     comments = { italic = false },
---                     keywords = { italic = false },
---                     sidebars = "dark",
---                     floats = "dark",
+--                     transparency = true,
+--                     italic = false,
 --                 },
---             vim.cmd("colorscheme tokyonight")
 --             })
---         end,
+--
+--             vim.cmd("colorscheme rose-pine")
+--
+--             ColorMyPencils()
+--         end
 --     },
-    -- {
-    --     "rose-pine/neovim",
-    --     name = "rose-pine",
-    --     config = function()
-    --         require("rose-pine").setup({
-    --             disable_background = true,
-    --             styles = {
-    --                 bold = true,
-    --                 italic = false,
-    --                 transparency = false,
-    --             },
-    --         })
-    --
-    --         vim.cmd("colorscheme rose-pine")
-    --         ColorMyPencils()
-    --     end,
-    -- },
 -- }
+
+
+
 
 
 
@@ -477,35 +482,35 @@
 --   -- },
 -- }
 
--- return {
---     "ellisonleao/gruvbox.nvim",
---     priority = 1000 ,
---     config = true,
---     opts = {
---         terminal_colors = true,
---         undercurl = true,
---         underline = true,
---         bold = true,
---         italic = {
---             strings = true,
---             emphasis = true,
---             comments = true,
---             operators = false,
---             folds = true,
---         },
---         strikethrough = true,
---         invert_selection = false,
---         invert_signs = false,
---         invert_tabline = false,
---         invert_intend_guides = false,
---         inverse = true, -- invert background for search, diffs, statuslines and errors
---         contrast = "hard", -- can be "hard", "soft" or empty string
---         palette_overrides = {},
---         overrides = {},
---         dim_inactive = false,
---         transparent_mode = true,
---     },
--- }
+return {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000 ,
+    config = true,
+    opts = {
+        terminal_colors = true,
+        undercurl = true,
+        underline = true,
+        bold = true,
+        italic = {
+            strings = true,
+            emphasis = true,
+            comments = true,
+            operators = false,
+            folds = true,
+        },
+        strikethrough = true,
+        invert_selection = false,
+        invert_signs = false,
+        invert_tabline = false,
+        invert_intend_guides = false,
+        inverse = true, -- invert background for search, diffs, statuslines and errors
+        contrast = "", -- can be "hard", "soft" or empty string
+        palette_overrides = {},
+        overrides = {},
+        dim_inactive = false,
+        transparent_mode = false,
+    },
+}
 
 
 -- return {colr
@@ -617,27 +622,27 @@
 --     end
 -- }
 
-return {
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {
-            style = "night",
-            transparent = true,
-            terminal_colors = true,
-            styles = {
-                -- Style to be applied to different syntax groups
-                -- Value is any valid attr-list value for `:help nvim_set_hl`
-                comments = { italic = true },
-                keywords = { bold = true,
-                    italic = false},
-                functions = {},
-                variables = {},
-                -- Background styles. Can be "dark", "transparent" or "normal"
-                sidebars = "transparent", -- style for sidebars, see below
-                floats = "transparent", -- style for floating windows
-            },
-        },
-    }
-}
+-- return {
+--     {
+--         "folke/tokyonight.nvim",
+--         lazy = false,
+--         priority = 1000,
+--         opts = {
+--             style = "night",
+--             transparent = true,
+--             terminal_colors = true,
+--             styles = {
+--                 -- Style to be applied to different syntax groups
+--                 -- Value is any valid attr-list value for `:help nvim_set_hl`
+--                 comments = { italic = true },
+--                 keywords = { bold = true,
+--                     italic = false},
+--                 functions = {},
+--                 variables = {},
+--                 -- Background styles. Can be "dark", "transparent" or "normal"
+--                 sidebars = "transparent", -- style for sidebars, see below
+--                 floats = "transparent", -- style for floating windows
+--             },
+--         },
+--     }
+-- }
