@@ -608,7 +608,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- set the cursor to block in insert mode
-vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
+-- vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', {noremap = true, silent = true})
