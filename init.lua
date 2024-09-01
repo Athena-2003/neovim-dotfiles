@@ -595,9 +595,9 @@ cmp.setup {
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
---Transparent background (not available without compositor)
-vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
+--Transparent background (not available without compositor): update: wont work for some reason. Should worry about later
+-- vim.api.nvim_set_hl(0, "Normal" , { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 
 --Relative line numbering
 vim.wo.relativenumber = true
@@ -608,7 +608,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- set the cursor to block in insert mode
--- vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
+vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', {noremap = true, silent = true})
@@ -673,4 +673,13 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 
-vim.cmd[[colorscheme gruvbox]]
+-- Adding transparency to colorschemes that dont support transparency by default. Thank you chatjippity. The only thing you are useful for
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("highlight Normal ctermbg=none guibg=none")
+    vim.cmd("highlight NonText ctermbg=none guibg=none")
+  end,
+})
+
+vim.cmd[[colorscheme gruber-darker]]

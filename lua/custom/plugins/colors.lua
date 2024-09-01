@@ -508,7 +508,7 @@
 --         palette_overrides = {},
 --         overrides = {},
 --         dim_inactive = false,
---         transparent_mode = false,
+--         transparent_mode = true,
 --     },
 -- }
 
@@ -647,6 +647,10 @@
 --     }
 -- }
 
+-- return {
+--     'gruvbox-community/gruvbox'
+-- }
+
 return {
-    'gruvbox-community/gruvbox'
+    { "blazkowolf/gruber-darker.nvim" }
 }
