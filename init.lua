@@ -41,7 +41,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- to highlight the line where the cursor currently is 
+-- to highlight the line where the cursor currently is
 -- vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
@@ -111,7 +111,7 @@ require('lazy').setup({
 
 			-- Useful status updates for LSP
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+			{ 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			'folke/neodev.nvim',
@@ -135,7 +135,7 @@ require('lazy').setup({
 	},
 
 	-- Useful plugin to show you pending keybinds.
-	{ 'folke/which-key.nvim', opts = {} },
+	{ 'folke/which-key.nvim',  opts = {} },
 	{
 		-- Adds git related signs to the gutter, as well as utilities for managing changes
 		'lewis6991/gitsigns.nvim',
@@ -149,10 +149,14 @@ require('lazy').setup({
 				changedelete = { text = '~' },
 			},
 			on_attach = function(bufnr)
-				vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-				vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-				vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
-				vim.keymap.set('n', '<leader>gb', require('gitsigns').toggle_current_line_blame, {buffer = bufnr, desc = 'Toggle [G]it [B]lame'})
+				vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
+					{ buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+				vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk,
+					{ buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+				vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk,
+					{ buffer = bufnr, desc = '[P]review [H]unk' })
+				vim.keymap.set('n', '<leader>gb', require('gitsigns').toggle_current_line_blame,
+					{ buffer = bufnr, desc = 'Toggle [G]it [B]lame' })
 			end,
 		},
 	},
@@ -177,23 +181,23 @@ require('lazy').setup({
 				section_separators = '',
 			},
 			sections = {
-				lualine_a = {'mode'},
-				lualine_b = {'branch', 'diff', 'diagnostics'},
+				lualine_a = { 'mode' },
+				lualine_b = { 'branch', 'diff', 'diagnostics' },
 				lualine_c = {
 					{
 						'filename',
 						path = 1,
 					}
 				},
-				lualine_x = {'encoding', 'fileformat', 'filetype'},
-				lualine_y = {'progress'},
-				lualine_z = {'location'}
+				lualine_x = { 'encoding', 'fileformat', 'filetype' },
+				lualine_y = { 'progress' },
+				lualine_z = { 'location' }
 			},
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
-				lualine_c = {'filename'},
-				lualine_x = {'location'},
+				lualine_c = { 'filename' },
+				lualine_x = { 'location' },
 				lualine_y = {},
 				lualine_z = {}
 
@@ -246,7 +250,7 @@ require('lazy').setup({
 
 	{ 'nvim-telescope/telescope-ui-select.nvim' },
 
-	{ 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+	{ 'folke/todo-comments.nvim',               event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
 	{
 		-- Highlight, edit, and navigate code
@@ -270,7 +274,7 @@ require('lazy').setup({
 	--
 	--    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
 	{ import = 'custom.plugins' },
-	}, {})
+}, {})
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -368,7 +372,7 @@ vim.keymap.set('n', '<leader>/', function()
 		winblend = 10,
 		previewer = false,
 	})
-	end, { desc = '[/] Fuzzily search in current buffer' })
+end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
@@ -381,7 +385,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
-	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'prisma', 'graphql' ,'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
+	ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'prisma', 'graphql', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	auto_install = true,
@@ -459,7 +463,7 @@ local on_attach = function(_, bufnr)
 	-- In this case, we create a function that lets us more easily define mappings specific
 	-- for LSP related items. It sets the mode, buffer and description for us each time.
 	local nmap = function(keys, func, desc)
-	if desc then
+		if desc then
 			desc = 'LSP: ' .. desc
 		end
 
@@ -486,13 +490,13 @@ local on_attach = function(_, bufnr)
 	nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
 	nmap('<leader>wl', function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, '[W]orkspace [L]ist Folders')
+	end, '[W]orkspace [L]ist Folders')
 
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
 		vim.lsp.buf.format()
-		end, { desc = 'Format current buffer with LSP' })
-	vim.keymap.set('n', '<leader>f', ':Format<CR>' )
+	end, { desc = 'Format current buffer with LSP' })
+	vim.keymap.set('n', '<leader>f', ':Format<CR>')
 end
 
 -- Enable the following language servers
@@ -575,16 +579,16 @@ cmp.setup {
 			else
 				fallback()
 			end
-			end, { 'i', 's' }),
+		end, { 'i', 's' }),
 		['<S-Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.locally_jumpable(-1) then
-			luasnip.jump(-1)
+				luasnip.jump(-1)
 			else
 				fallback()
 			end
-			end, { 'i', 's' }),
+		end, { 'i', 's' }),
 	},
 	sources = {
 		{ name = 'nvim_lsp' },
@@ -611,7 +615,7 @@ vim.o.expandtab = true
 vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
-vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', { noremap = true, silent = true })
 
 -- add remap of hitting jj to esc into normal mode
 -- vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
@@ -625,23 +629,23 @@ harpoon:setup()
 -- basic telescope configuration
 local conf = require("telescope.config").values
 local function toggle_telescope(harpoon_files)
-    local file_paths = {}
-    for _, item in ipairs(harpoon_files.items) do
-        table.insert(file_paths, item.value)
-    end
+	local file_paths = {}
+	for _, item in ipairs(harpoon_files.items) do
+		table.insert(file_paths, item.value)
+	end
 
-    require("telescope.pickers").new({}, {
-        prompt_title = "Harpoon",
-        finder = require("telescope.finders").new_table({
-            results = file_paths,
-        }),
-        previewer = conf.file_previewer({}),
-        sorter = conf.generic_sorter({}),
-    }):find()
+	require("telescope.pickers").new({}, {
+		prompt_title = "Harpoon",
+		finder = require("telescope.finders").new_table({
+			results = file_paths,
+		}),
+		previewer = conf.file_previewer({}),
+		sorter = conf.generic_sorter({}),
+	}):find()
 end
 
 vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" })
+	{ desc = "Open harpoon window" })
 
 vim.keymap.set("n", "<leader>m", function() harpoon:list():add() end)
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
@@ -674,12 +678,15 @@ vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 
 -- Adding transparency to colorschemes that dont support transparency by default. Thank you chatjippity. The only thing you are useful for
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.cmd("highlight Normal ctermbg=none guibg=none")
-    vim.cmd("highlight NonText ctermbg=none guibg=none")
-  end,
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = function()
+--     vim.cmd("highlight Normal ctermbg=none guibg=none")
+--     vim.cmd("highlight NonText ctermbg=none guibg=none")
+--   end,
+-- })
 
-vim.cmd[[colorscheme gruber-darker]]
+vim.cmd [[colorscheme gruvbox]]
+
+-- Get filesystem autocomplete to save my soul
+vim.keymap.set('n', '<leader>x', '<C-x><C-f>', { desc = 'Filesystem Autocomplete' })
