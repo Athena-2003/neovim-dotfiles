@@ -687,6 +687,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 -- })
 
 -- Get filesystem autocomplete to save my soul
-vim.keymap.set('i', '<leader>x', '<C-x><C-f>', { desc = 'Filesystem Autocomplete' })
+-- vim.keymap.set('i', '<leader>x', '<C-x><C-f>', { desc = 'Filesystem Autocomplete' })
 
 -- vim.cmd [[colorscheme gruvbox]]
