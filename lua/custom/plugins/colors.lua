@@ -109,7 +109,7 @@
 --       vim.api.nvim_set_hl(0, "NormalFloat" , { bg = "none" })
 --     end,
 --   },
---   
+--
 --   -- {
 --   --   "catppuccin/nvim",
 --   --   priority = 150,
@@ -484,7 +484,7 @@
 
 -- return {
 --     "ellisonleao/gruvbox.nvim",
---     priority = 1000 ,
+--     priority = 1000,
 --     config = true,
 --     opts = {
 --         terminal_colors = true,
@@ -504,7 +504,7 @@
 --         invert_tabline = false,
 --         invert_intend_guides = false,
 --         inverse = true, -- invert background for search, diffs, statuslines and errors
---         contrast = "", -- can be "hard", "soft" or empty string
+--         contrast = "",  -- can be "hard", "soft" or empty string
 --         palette_overrides = {},
 --         overrides = {},
 --         dim_inactive = false,
@@ -726,3 +726,4 @@ return {
         end
     }
 }
+
