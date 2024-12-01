@@ -712,27 +712,27 @@
 --     { "blazkowolf/gruber-darker.nvim", name = "gruber-darker", config = ColorMyGruber },
 -- }
 
--- return {
---     {
---         'sainnhe/sonokai',
---         lazy = false,
---         priority = 1000,
---         config = function()
---             -- Optionally configure and load the colorscheme
---             -- directly inside the plugin declaration.
---             vim.g.sonokai_transparent_background = true
---             vim.g.sonokai_style = 'shusia'
---             vim.g.sonokai_enable_italic = false
---             vim.g.sonokai_cursor = "yellow"
---             vim.cmd.colorscheme('sonokai')
---         end
---     }
--- }
-
 return {
     {
-        "tjdevries/colorbuddy.nvim",
+        'sainnhe/sonokai',
         lazy = false,
-        priority = 1000
+        priority = 1000,
+        config = function()
+            -- Optionally configure and load the colorscheme
+            -- directly inside the plugin declaration.
+            vim.g.sonokai_transparent_background = true
+            vim.g.sonokai_style = 'shusia'
+            vim.g.sonokai_enable_italic = false
+            vim.g.sonokai_cursor = "yellow"
+            vim.cmd.colorscheme('sonokai')
+        end
     }
 }
+
+-- return {
+--     {
+--         "tjdevries/colorbuddy.nvim",
+--         lazy = false,
+--         priority = 1000
+--     }
+-- }
