@@ -621,6 +621,7 @@ vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', { noremap = true, silent 
 -- vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = true, silent = true })
 
+
 local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED

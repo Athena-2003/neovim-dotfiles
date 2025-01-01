@@ -736,3 +736,7 @@ return {
 --         priority = 1000
 --     }
 -- }
+
+-- return {
+--     {'alljokecake/naysayer-theme.nvim', as = 'naysayer'}
+-- }
