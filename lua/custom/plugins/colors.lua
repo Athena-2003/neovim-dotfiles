@@ -740,3 +740,16 @@ return {
 -- return {
 --     {'alljokecake/naysayer-theme.nvim', as = 'naysayer'}
 -- }
+
+
+-- return {
+--     {
+--         "gambhirsharma/vesper.nvim",
+--         lazy = false,
+--         priority = 1000,
+--         name = "vesper",
+--         -- config = function ()
+--         --     vim.cmd([[colorscheme vesper]])
+--         -- end
+--    }
+-- }
