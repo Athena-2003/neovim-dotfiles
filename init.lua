@@ -612,7 +612,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- set the cursor to block in insert mode
--- vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
+vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', { noremap = true, silent = true })
@@ -691,10 +691,10 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 -- vim.keymap.set('i', '<leader>x', '<C-x><C-f>', { desc = 'Filesystem Autocomplete' })
 
 -- Restore beam cursor on exit
-vim.api.nvim_create_autocmd('VimLeave', {
-    pattern = '*',
-    command = 'set guicursor=a:ver25',
-})
+-- vim.api.nvim_create_autocmd('VimLeave', {
+--     pattern = '*',
+--     command = 'set guicursor=a:ver25',
+-- })
 
 -- set colorscheme
 vim.cmd [[colorscheme sonokai]]
