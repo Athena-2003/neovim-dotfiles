@@ -35,7 +35,7 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
--- Set <space> as the leader keyL
+-- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
@@ -264,7 +264,7 @@ require('lazy').setup({
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 	--       These are some example plugins that I've included in the kickstart repository.
 	--       Uncomment any of the lines below to enable them.
-	-- require 'kickstart.plugins.autoformat',
+	require 'kickstart.plugins.autoformat',
 	-- require 'kickstart.plugins.debug',
 
 	-- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -295,7 +295,7 @@ vim.o.mouse = 'a'
 -- vim.o.clipboard = 'unnamedplus'
 
 -- remap to copy text to system clipboard
-vim.keymap.set('v', '<A-y>', '"+y', { desc = "[Y]ank to system clipboard" })
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>y', '"+y<CR>', { desc = "[Y]ank to system clipboard" })
 
 -- remap to paste text from system clipboard
 vim.keymap.set('n', '<A-p>', '"+p', { desc = "[P]aste from the system clipboard" })
@@ -707,3 +707,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 
 -- set colorscheme
 vim.cmd [[colorscheme sonokai]]
+
+-- Add border to the popup windows
+vim.o.winborder = "rounded"

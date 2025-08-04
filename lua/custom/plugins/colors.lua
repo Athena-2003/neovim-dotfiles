@@ -51,7 +51,7 @@
 -- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --
 -- end
---
+
 -- return {
 --     -- {
 --     --     "folke/tokyonight.nvim",
@@ -80,16 +80,16 @@
 --         name = "rose-pine",
 --         config = function()
 --             require('rose-pine').setup({
---                 disable_background = true,
+--                 disable_background = false,
 --                 styles = {
---                     transparency = true,
+--                     transparency = false,
 --                     italic = false,
 --                 },
 --             })
 --
---             vim.cmd("colorscheme rose-pine")
+--             -- vim.cmd("colorscheme rose-pine")
 --
---             ColorMyPencils()
+--             -- ColorMyPencils()
 --         end
 --     },
 -- }
@@ -574,7 +574,7 @@
 --             styles = {
 --                 comment = { italic = true },
 --                 keyword = { bold = true , italic = false }, -- any other keyword
---                 type = { italic = false }, -- (preferred) int, long, char, etc
+--                 type = { italic = false , bold = true}, -- (preferred) int, long, char, etc
 --                 storageclass = { italic = true }, -- static, register, volatile, etc
 --                 structure = { italic = true }, -- struct, union, enum, etc
 --                 parameter = { italic = true }, -- parameter pass in function
@@ -720,9 +720,9 @@ return {
         config = function()
             -- Optionally configure and load the colorscheme
             -- directly inside the plugin declaration.
-            vim.g.sonokai_transparent_background = false 
+            vim.g.sonokai_transparent_background = true
             vim.g.sonokai_style = 'shusia'
-            vim.g.sonokai_enable_italic = false
+            vim.g.sonokai_enable_italic = true
             vim.g.sonokai_cursor = "yellow"
             vim.cmd.colorscheme('sonokai')
         end
