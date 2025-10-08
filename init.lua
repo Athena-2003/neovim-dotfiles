@@ -548,12 +548,7 @@ mason_lspconfig.setup {
 -- 	end
 -- }
 for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
-	require('lspconfig')[server_name].setup {
-		capabilities = capabilities,
-		on_attach = on_attach,
-		settings = servers[server_name],
-		filetypes = (servers[server_name] or {}).filetypes,
-	}
+	vim.lsp.enable(server_name)
 end
 
 
