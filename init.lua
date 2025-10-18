@@ -508,12 +508,12 @@ end
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-	-- clangd = {},
-	-- gopls = {},
-	-- pyright = {},
-	-- rust_analyzer = {},
-	-- tsserver = {},
-	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
+	clangd = {},
+	gopls = {},
+	pyright = {},
+	rust_analyzer = {},
+	ts_ls = {},
+	html = { filetypes = { 'html', 'twig', 'hbs' } },
 
 	lua_ls = {
 		Lua = {
@@ -550,7 +550,9 @@ mason_lspconfig.setup {
 for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
 	vim.lsp.enable(server_name)
 	vim.lsp.config(server_name, {
-		on_attach = on_attach
+		on_attach = on_attach,
+		capabilities = capabilities,
+		settings = servers[server_name]
 	})
 end
 
