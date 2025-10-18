@@ -549,6 +549,9 @@ mason_lspconfig.setup {
 -- }
 for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
 	vim.lsp.enable(server_name)
+	vim.lsp.config(server_name, {
+		on_attach = on_attach
+	})
 end
 
 
