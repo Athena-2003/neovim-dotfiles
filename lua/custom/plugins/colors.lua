@@ -722,7 +722,7 @@ return {
             -- directly inside the plugin declaration.
             vim.g.sonokai_transparent_background = true
             vim.g.sonokai_style = 'shusia'
-            vim.g.sonokai_enable_italic = true
+            vim.g.sonokai_enable_italic = false
             vim.g.sonokai_cursor = "yellow"
             vim.cmd.colorscheme('sonokai')
         end
