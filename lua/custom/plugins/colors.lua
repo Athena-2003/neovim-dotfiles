@@ -622,32 +622,32 @@
 --     end
 -- }
 
-return {
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      style = "night",
-      transparent = true,
-      terminal_colors = true,
-      styles = {
-        -- Style to be applied to different syntax groups
-        -- Value is any valid attr-list value for `:help nvim_set_hl`
-        comments = { italic = true },
-        keywords = {
-          bold = true,
-          italic = false
-        },
-        functions = {},
-        variables = {},
-        -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = "transparent",         -- style for sidebars, see below
-        floats = "transparent",           -- style for floating windows
-      },
-    },
-  }
-}
+-- return {
+--   {
+--     "folke/tokyonight.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {
+--       style = "night",
+--       transparent = true,
+--       terminal_colors = true,
+--       styles = {
+--         -- Style to be applied to different syntax groups
+--         -- Value is any valid attr-list value for `:help nvim_set_hl`
+--         comments = { italic = true },
+--         keywords = {
+--           bold = true,
+--           italic = false
+--         },
+--         functions = {},
+--         variables = {},
+--         -- Background styles. Can be "dark", "transparent" or "normal"
+--         sidebars = "transparent",         -- style for sidebars, see below
+--         floats = "transparent",           -- style for floating windows
+--       },
+--     },
+--   }
+-- }
 
 -- return {
 --     'gruvbox-community/gruvbox'
@@ -714,22 +714,22 @@ return {
 --     { "blazkowolf/gruber-darker.nvim", name = "gruber-darker", config = ColorMyGruber },
 -- }
 
--- return {
---     {
---         'sainnhe/sonokai',
---         lazy = false,
---         priority = 1000,
---         config = function()
---             -- Optionally configure and load the colorscheme
---             -- directly inside the plugin declaration.
---             vim.g.sonokai_transparent_background = true
---             vim.g.sonokai_style = 'shusia'
---             vim.g.sonokai_enable_italic = false
---             vim.g.sonokai_cursor = "yellow"
---             vim.cmd.colorscheme('sonokai')
---         end
---     }
--- }
+return {
+  {
+    'sainnhe/sonokai',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.sonokai_transparent_background = true
+      vim.g.sonokai_style = 'shusia'
+      vim.g.sonokai_enable_italic = false
+      vim.g.sonokai_cursor = "yellow"
+      vim.cmd.colorscheme('sonokai')
+    end
+  }
+}
 
 -- return {
 --     {

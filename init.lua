@@ -655,7 +655,7 @@ vim.o.expandtab = true
 vim.cmd("filetype plugin indent on")
 
 -- set the cursor to block in insert mode
--- vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
+vim.cmd([[ autocmd InsertEnter,InsertLeave * set guicursor=n-v-c-i:block ]])
 
 -- Remap :Rexplore to CTRL-E in normal mode
 vim.api.nvim_set_keymap('n', '<C-f>', ':Rexplore<CR>', { noremap = true, silent = true })
@@ -741,7 +741,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 
 -- set colorscheme
 -- vim.cmd [[colorscheme sonokai]]
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme sonokai")
 
 
 -- Add border to the popup windows
