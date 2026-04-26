@@ -483,33 +483,33 @@
 -- }
 
 -- return {
---     "ellisonleao/gruvbox.nvim",
---     priority = 1000,
---     config = true,
---     opts = {
---         terminal_colors = true,
---         undercurl = true,
---         underline = true,
---         bold = true,
---         italic = {
---             strings = true,
---             emphasis = true,
---             comments = true,
---             operators = false,
---             folds = true,
---         },
---         strikethrough = true,
---         invert_selection = false,
---         invert_signs = false,
---         invert_tabline = false,
---         invert_intend_guides = false,
---         inverse = true, -- invert background for search, diffs, statuslines and errors
---         contrast = "",  -- can be "hard", "soft" or empty string
---         palette_overrides = {},
---         overrides = {},
---         dim_inactive = false,
---         transparent_mode = true,
+--   "ellisonleao/gruvbox.nvim",
+--   priority = 1000,
+--   config = true,
+--   opts = {
+--     terminal_colors = true,
+--     undercurl = true,
+--     underline = true,
+--     bold = true,
+--     italic = {
+--       strings = true,
+--       emphasis = true,
+--       comments = true,
+--       operators = false,
+--       folds = true,
 --     },
+--     strikethrough = true,
+--     invert_selection = false,
+--     invert_signs = false,
+--     invert_tabline = false,
+--     invert_intend_guides = false,
+--     inverse = true,     -- invert background for search, diffs, statuslines and errors
+--     contrast = "",      -- can be "hard", "soft" or empty string
+--     palette_overrides = {},
+--     overrides = {},
+--     dim_inactive = false,
+--     transparent_mode = true,
+--   },
 -- }
 
 
@@ -622,30 +622,32 @@
 --     end
 -- }
 
--- return {
---     {
---         "folke/tokyonight.nvim",
---         lazy = false,
---         priority = 1000,
---         opts = {
---             style = "night",
---             transparent = true,
---             terminal_colors = true,
---             styles = {
---                 -- Style to be applied to different syntax groups
---                 -- Value is any valid attr-list value for `:help nvim_set_hl`
---                 comments = { italic = true },
---                 keywords = { bold = true,
---                     italic = false},
---                 functions = {},
---                 variables = {},
---                 -- Background styles. Can be "dark", "transparent" or "normal"
---                 sidebars = "transparent", -- style for sidebars, see below
---                 floats = "transparent", -- style for floating windows
---             },
---         },
---     }
--- }
+return {
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "night",
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        -- Style to be applied to different syntax groups
+        -- Value is any valid attr-list value for `:help nvim_set_hl`
+        comments = { italic = true },
+        keywords = {
+          bold = true,
+          italic = false
+        },
+        functions = {},
+        variables = {},
+        -- Background styles. Can be "dark", "transparent" or "normal"
+        sidebars = "transparent",         -- style for sidebars, see below
+        floats = "transparent",           -- style for floating windows
+      },
+    },
+  }
+}
 
 -- return {
 --     'gruvbox-community/gruvbox'
@@ -712,22 +714,22 @@
 --     { "blazkowolf/gruber-darker.nvim", name = "gruber-darker", config = ColorMyGruber },
 -- }
 
-return {
-    {
-        'sainnhe/sonokai',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            -- Optionally configure and load the colorscheme
-            -- directly inside the plugin declaration.
-            vim.g.sonokai_transparent_background = true
-            vim.g.sonokai_style = 'shusia'
-            vim.g.sonokai_enable_italic = false
-            vim.g.sonokai_cursor = "yellow"
-            vim.cmd.colorscheme('sonokai')
-        end
-    }
-}
+-- return {
+--     {
+--         'sainnhe/sonokai',
+--         lazy = false,
+--         priority = 1000,
+--         config = function()
+--             -- Optionally configure and load the colorscheme
+--             -- directly inside the plugin declaration.
+--             vim.g.sonokai_transparent_background = true
+--             vim.g.sonokai_style = 'shusia'
+--             vim.g.sonokai_enable_italic = false
+--             vim.g.sonokai_cursor = "yellow"
+--             vim.cmd.colorscheme('sonokai')
+--         end
+--     }
+-- }
 
 -- return {
 --     {
@@ -780,11 +782,15 @@ return {
 --                 theme = "wave",              -- Load "wave" theme
 --                 background = {               -- map the value of 'background' option to a theme
 --                     dark = "wave",           -- try "dragon" !
---                     light = "lotus"
+--                     light = "lotus"colors
 --                 },
 --             })
 --
 --         end
 --
 --     }
+-- }
+
+-- return {
+--     'nanotech/jellybeans.vim',
 -- }
